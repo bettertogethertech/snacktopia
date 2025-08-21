@@ -4,30 +4,203 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>About Snack Shack</title>
+    <title>About – C&F Snacktopia</title>
+    
+    <meta name="description"
+        content="C&F Snacktopia: Where Every Bite Takes You Back. A neighborhood snack destination serving joy, nostalgia, and flavor." />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Inter:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+
+        .page {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 2.5rem 1rem;
+            text-align: center;
+        }
+
+        h2 {
+            font-family: Fredoka, sans-serif;
+            font-size: 2.4rem;
+            margin-bottom: 1rem;
+            color: #111;
+        }
+
+        .bead {
+            width: 70px;
+            height: 6px;
+            border-radius: 999px;
+            margin: 0.75rem auto 2rem;
+            background: linear-gradient(90deg, var(--primary), var(--accent), var(--secondary));
+            opacity: 0.7;
+        }
+
+        p {
+            font-size: 1.15rem;
+            line-height: 1.75;
+            margin-bottom: 1.25rem;
+            text-align: left;
+        }
+
+        .cta {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .cta a {
+            display: inline-block;
+            background: var(--primary);
+            color: #fff;
+            padding: 0.8rem 1.4rem;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: background 0.3s;
+        }
+
+        .cta a:hover {
+            background: #4c65d6;
+        }
+        
+        /* background decor container */
+        .bg-decor{
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;              /* behind content */
+        overflow: hidden;
+        }
+
+        /* make sure your content sits above */
+        .about-surface, .page, .about-wrap { position: relative; z-index: 1; }
+
+        /* truck placement + motion */
+        .bg-truck{
+        position: absolute;
+        width: 520px;
+        max-width: 45vw;
+        right: -6%;
+        top: 10%;
+        animation: bob 7s ease-in-out infinite;
+        filter: blur(.15px);     /* tiny soften */
+        }
+
+        /* small popsicle accent on opposite side */
+        .bg-pop{
+        position: absolute;
+        width: 120px;
+        left: -2%;
+        bottom: 8%;
+        animation: floaty 9s ease-in-out infinite;
+        }
+
+        /* gentle motions */
+        @keyframes bob {
+        0%,100% { transform: translateY(0) rotate(0deg); }
+        50%     { transform: translateY(-6px) rotate(.2deg); }
+        }
+        @keyframes floaty {
+        0%,100% { transform: translateY(0); }
+        50%     { transform: translateY(5px); }
+        }
+
+        /* respect reduced motion */
+        @media (prefers-reduced-motion: reduce){
+        .bg-truck, .bg-pop { animation: none; }
+        }
+
+        /* responsive tweaks */
+        @media (max-width: 720px){
+        .bg-truck{ width: 68vw; right: -18%; top: 12%; opacity: .7; }
+        .bg-pop{ display: none; }
+        }
+
+    </style>
 </head>
 
 <body>
-    <header>
-        <h1>Snack Shack</h1>
-        <nav>
-            <a href="index.html">Menu</a>
-            <a href="about.html">About Us</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+        <div class="header-content">
+            <div class="logo-title">
+                <img src="images/logo.png" alt="C&F Snacktopia logo" class="logo" />
+                <div>
+                    <h1 class="brand">C&amp;F Snacktopia</h1>
+                    <p class="tagline">Where Every Bite Takes You Back</p>
+                </div>
+            </div>
+            <nav class="main-nav" aria-label="Primary">
+                <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+                <div class="nav-links">
+                    <a href="index.html">Menu</a>
+                    <a href="about.html" aria-current="page">About</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="https://www.google.com/maps/place/4975+SW+Hall+Blvd,+Beaverton,+OR+97005" target="_blank"
+                        rel="noopener noreferrer">Directions</a>
+                </div>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <h2>About Us</h2>
-        <p>Snack Shack is your friendly neighborhood spot for fast, affordable, and delicious snacks. Whether you’re
-            craving something sweet, salty, or sizzling hot — we’ve got you covered with fresh favorites and fun vibes.
-        </p>
+    <main id="main" class="page">
+
+        <h2>C &amp; F Snacktopia</h2>
+        <div class="bead"></div>
+        <p><strong>C &amp; F Snacktopia: Where Every Bite Takes You Back</strong></p>
+        <p>Remember the time when you were a kid growing up in the inner city and the Ice Cream truck came rolling
+            through the neighborhood. That blast of music, the ring of a bell, the rush of excitement as you grabbed a
+            dollar and ran outside. At Snacktopia, we are bringing that feeling back.</p>
+        <p>Born from the memories of growing up in the inner city, Snacktopia is your ultimate snack destination — where
+            joy, nostalgia, and flavor meet. We serve up the classics you love: sweet and salty snacks, cold treats like
+            ice cream and snow cones, refreshing soft drinks, coffee, and more.</p>
+        <p>Whether you are chasing that childhood joy or sharing it with the next generation, Snacktopia is here to make
+            every bite feel like a trip down memory lane.</p>
+        <p><strong>Welcome to the fun. Welcome to Snacktopia.</strong></p>
+
+        <div class="cta">
+            <a href="contact.html">Get in touch!</a>
+        </div>
+
     </main>
 
-    <footer>
-        <p>&copy; 2025 Snack Shack</p>
-    </footer>
+<footer class="site-footer">
+    <div class="footer-content">
+        <p class="footer-name">C & F Snacktopia</p>
+        <p>
+            <a href="https://www.google.com/maps/place/4975+SW+Hall+Blvd,+Beaverton,+OR+97005" target="_blank"
+                rel="noopener noreferrer">
+                4975 SW Hall Blvd, Beaverton, OR 97005
+            </a>
+        </p>
+        <p>
+            <a href="tel:+15036401234">(503) 640-1234</a>
+        </p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/YOUR_PAGE" target="_blank" aria-label="Facebook">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/YOUR_PAGE" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+    </div>
+</footer>
+
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mainNav = document.querySelector('.main-nav');
+        menuToggle.addEventListener('click', () => {
+            const open = mainNav.classList.toggle('open');
+            menuToggle.setAttribute('aria-expanded', String(open));
+        });
+    </script>
 </body>
 
 </html>
+

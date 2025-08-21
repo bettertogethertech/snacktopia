@@ -4,207 +4,403 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Snacktopia - Menu</title>
+    <title>C&F Snacktopia – Where Every Bite Takes You Back</title>
+    <meta name="description" content="C&F Snacktopia: inner-city born snack haven
+serving nostalgia daily — chips, candy cups, snow cones, Mangonadas, coffee, and
+more." />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Inter:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
-    <header>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
         <div class="header-content">
             <div class="logo-title">
-                <img src="images/logo.png" alt="Snack Shack Logo" class="logo" />
-                <h1>C&F</h1>
-                <h1>SNACKTOPIA</h1>
+                <img src="images/logo.png" alt="C&F Snacktopia logo" class="logo" />
+                <div>
+                    <h1 class="brand">C&amp;F Snacktopia</h1>
+                    <p class="tagline">Where Every Bite Takes You Back</p>
+                </div>
             </div>
-            <nav class="main-nav">
-                <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+            <nav class="main-nav" aria-label="Primary">
+                <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
                 <div class="nav-links">
-                    <a href="index.html">Menu</a>
-                    <a href="about.html">About Us</a>
+                    <a href="index.html" aria-current="page">Menu</a>
+                    <a href="about.html">About</a>
                     <a href="contact.html">Contact</a>
-                    <a href="https://maps.google.com/?q=Snack+Shack+Portland" target="_blank"
+                    <a href="https://www.google.com/maps/place/4975+SW+Hall+Blvd,+Beaverton,+OR+97005" target="_blank"
                         rel="noopener noreferrer">Directions</a>
                 </div>
             </nav>
+        </div>
     </header>
 
-    <div class="container">
-        <div class="category-nav">
+    <!-- Compact hero with ticker + live open/closed -->
+    <section class="hero-mini">
+        <div class="status">
+            <span id="openBadge" class="badge-pill">Checking hours…</span>
+            <span id="openNote" class="note"></span>
+        </div>
+
+        <div class="ticker" aria-hidden="true">
+            <div class="ticker-track">
+                <span class="chip">Snow Cones ❄️</span>
+                <span class="chip">Candy Cups 🍬</span>
+                <span class="chip">Mangonadas 🥭</span>
+                <span class="chip">Chili Dogs 🌭</span>
+                <span class="chip">Coffee ☕</span>
+                <span class="chip">Sodas 🥤</span>
+                <!-- duplicate for seamless loop -->
+                <span class="chip">Snow Cones ❄️</span>
+                <span class="chip">Candy Cups 🍬</span>
+                <span class="chip">Mangonadas 🥭</span>
+                <span class="chip">Chili Dogs 🌭</span>
+                <span class="chip">Coffee ☕</span>
+                <span class="chip">Sodas 🥤</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="container" id="main">
+        <div class="category-nav" aria-label="Menu categories">
+            <a href="#specials">Specials</a>
             <a href="#drinks">Drinks</a>
             <a href="#snacks">Snacks</a>
             <a href="#sweets">Sweets</a>
         </div>
-
         <main>
-            <!-- Drinks Section -->
+            <!-- Specials -->
+            <section id="specials" class="dropdown-section active">
+                <button class="dropdown-toggle" aria-expanded="true">
+                    Specials <span class="dropdown-icon">▼</span>
+                </button>
+                <div class="dropdown-content">
+                    <div class="menu-grid">
+                        <article class="card">
+                            <img src="images/mangonadas.jpg" alt="Mangonadas" />
+                            <div class="card-content">
+                                <h3>Mangonada</h3>
+                                <p class="price">$5.00</p>
+                                <p class="note">Mango, chamoy, tajín — a tangy-sweet classic.</p>
+                            </div>
+                        </article>
+                        <article class="card">
+                            <img src="images/frito-chili-image-2.jpg" alt="Chili Dog" />
+                            <div class="card-content">
+                                <h3>Chili Dog</h3>
+                                <p class="price">$6.00</p>
+                            </div>
+                        </article>
+                        <article class="card">
+                            <img src="images/hotdog.jpg" alt="Bacon-wrapped Dog" />
+                            <div class="card-content">
+                                <h3>Bacon-wrapped Dog</h3>
+                                <p class="price">$6.00</p>
+                            </div>
+                        </article>
+                        <article class="card">
+                            <img src="images/candy.jpg" alt="Candy Cups" />
+                            <div class="card-content">
+                                <h3>Candy Cups</h3>
+                                <p class="price">$2.00</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Drinks -->
             <section id="drinks" class="dropdown-section active">
-                <button class="dropdown-toggle">
+                <button class="dropdown-toggle" aria-expanded="true">
                     Drinks <span class="dropdown-icon">▼</span>
                 </button>
                 <div class="dropdown-content">
                     <div class="menu-grid">
-                        <div class="card">
-                            <img src="images/water.jpg" alt="Water Bottle" />
+                        <article class="card">
+                            <img src="images/coffee-drip.jpg" alt="Drip Coffee" />
                             <div class="card-content">
-                                <h3>Water Bottle</h3>
-                                <p>$1.00</p>
+                                <h3>Drip Coffee</h3>
+                                <p class="price">$3.00</p>
                             </div>
-                        </div>
-                        <div class="card">
-                            <img src="images/gatorade.jpg" alt="Gatorade" />
+                        </article>
+                        <article class="card">
+                            <img src="images/americano_coffee.jpg" alt="Espresso / Americano" />
                             <div class="card-content">
-                                <h3>Gatorade</h3>
-                                <p>$2.00</p>
+                                <h3>Espresso</h3>
+                                <p class="price">$4.00</p>
                             </div>
-                        </div>
-                        <div class="card">
-                            <img src="images/soda.jpg" alt="Soda Can" />
+                        </article>
+                        <article class="card">
+                            <img src="images/latte.png" alt="Latte" />
                             <div class="card-content">
-                                <h3>Soda (Various)</h3>
-                                <p>$2.00</p>
+                                <h3>Latte</h3>
+                                <p class="price">$4.00</p>
                             </div>
-                        </div>
-                        <div class="card">
-                            <img src="images/icedtea.jpg" alt="Iced Tea" />
+                        </article>
+                        <article class="card">
+                            <img src="images/coffee-drip.jpg" alt="Hot Chocolate" />
                             <div class="card-content">
-                                <h3>Iced Tea</h3>
-                                <p>$2.00</p>
+                                <h3>Hot Chocolate</h3>
+                                <p class="price">$4.00</p>
                             </div>
-                        </div>
+                        </article>
+                        <article class="card">
+                            <img src="images/soda.jpg" alt="Sodas (Pepsi, Sprite)" />
+                            <div class="card-content">
+                                <h3>Sodas</h3>
+                                <p class="price">$1.00</p>
+                                <p class="note">Pepsi, Sprite</p>
+                            </div>
+                        </article>
+                        <article class="card">
+                            <img src="images/water-bottle-19350931.webp" alt="Bottled Water" />
+                            <div class="card-content">
+                                <h3>Bottled Water</h3>
+                                <p class="price">$1.00</p>
+                            </div>
+                        </article>
+                        <article class="card">
+                            <img src="images/sparkling-water-image.jpg" alt="Sparkling Water" />
+                            <div class="card-content">
+                                <h3>Sparkling Water</h3>
+                                <p class="price">$2.00</p>
+                            </div>
+                        </article>
+                        <article class="card soon">
+                            <img src="images/icecream.jpg" alt="Ice Cream Cups" />
+                            <div class="card-content">
+                                <h3>Ice Cream Cups <span class="pill">Coming Soon</span></h3>
+                                <p class="price">$4.00 / $5.00</p>
+                            </div>
+                        </article>
                     </div>
                 </div>
             </section>
 
-            <!-- Snacks Section -->
+            <!-- Snacks -->
             <section id="snacks" class="dropdown-section active">
-                <button class="dropdown-toggle">
+                <button class="dropdown-toggle" aria-expanded="true">
                     Snacks <span class="dropdown-icon">▼</span>
                 </button>
                 <div class="dropdown-content">
                     <div class="menu-grid">
-                        <div class="card">
-                            <img src="images/chips.jpg" alt="Chips" />
+                        <article class="card">
+                            <img src="images/chips-variety.jpg" alt="Assorted Chips" />
                             <div class="card-content">
-                                <h3>Chips (Various Flavors)</h3>
-                                <p>$1.50</p>
+                                <h3>Chips (Assorted)</h3>
+                                <p class="price">$1.00</p>
+                                <p class="note">Cheetos, Fritos, Takis, Doritos, Flamin' Hot,
+                                    Lays, BBQ Lays, Popcorn</p>
                             </div>
-                        </div>
-                        <div class="card">
-                            <img src="images/pretzel.jpg" alt="Pretzel" />
+                        </article>
+                        <article class="card">
+                            <img src="images/chips.jpg" alt="Chips with Chamoy" />
                             <div class="card-content">
-                                <h3>Soft Pretzel</h3>
-                                <p>$3.00</p>
+                                <h3>Chips w/ Chamoy</h3>
+                                <p class="price">$1.50</p>
                             </div>
-                        </div>
-                        <div class="card">
-                            <img src="images/noodles.jpg" alt="Cup Noodles" />
+                        </article>
+                        <article class="card">
+                            <img src="images/chilli-cheese-fritos-with-jalapenos.png" alt="Chili Cheese Fritos" />
                             <div class="card-content">
-                                <h3>Cup Noodles</h3>
-                                <p>$2.50</p>
+                                <h3>Chili Cheese Fritos</h3>
+                                <p class="price">$4.00 / $5.00</p>
                             </div>
-                        </div>
-                        <div class="card">
-                            <img src="images/hotdog.jpg" alt="Hot Dog" />
+                        </article>
+                        <article class="card soon">
+                            <img src="images/mini-sandwiches-picture.jpg" alt="Mini Sandwiches" />
                             <div class="card-content">
-                                <h3>Hot Dog</h3>
-                                <p>$3.50</p>
+                                <h3>Mini Sandwiches <span class="pill">Coming Soon</span></h3>
+                                <p class="price">$4.00</p>
+                                <p class="note">Cucumber • PB&J • Chicken Salad • Tuna</p>
                             </div>
-                        </div>
-                        <div class="card">
-                            <img src="images/chili.jpg" alt="Chili" />
-                            <div class="card-content">
-                                <h3>Chili</h3>
-                                <p>$4.50</p>
-                            </div>
-                        </div>
+                        </article>
                     </div>
                 </div>
             </section>
 
-            <!-- Sweets Section -->
+            <!-- Sweets -->
             <section id="sweets" class="dropdown-section active">
-                <button class="dropdown-toggle">
+                <button class="dropdown-toggle" aria-expanded="true">
                     Sweets <span class="dropdown-icon">▼</span>
                 </button>
                 <div class="dropdown-content">
                     <div class="menu-grid">
-                        <div class="card">
-                            <img src="images/candy.jpg" alt="Candy" />
+                        <article class="card">
+                            <img src="images/ice-cream-image.jpg" alt="ICEE Pops" />
                             <div class="card-content">
-                                <h3>Candy (Assorted)</h3>
-                                <p>$1.00</p>
+                                <h3>ICEE Pops</h3>
+                                <p class="price">$1.00</p>
                             </div>
-                        </div>
-                        <div class="card">
+                        </article>
+                        <article class="card">
                             <img src="images/snowcone.jpg" alt="Snow Cone" />
                             <div class="card-content">
                                 <h3>Snow Cone</h3>
-                                <p>$2.50</p>
+                                <p class="price">$3.00 / $4.00</p>
                             </div>
-                            
-                        </div>
-                        <div class="card">
-                            <img src="images/cookies.jpg" alt="Cookies" />
+                        </article>
+                        <article class="card">
+                            <img src="images/tarmarndo-straws.jpg" alt="Tamarindo Straw" />
                             <div class="card-content">
-                                <h3>Fresh Baked Cookies</h3>
-                                <p>$1.50</p>
+                                <h3>Tamarindo Straw</h3>
+                                <p class="price">$2.00</p>
                             </div>
-                        </div>
-                        <div class="card">
-                            <img src="images/icecream.jpg" alt="Icecream" />
+                        </article>
+                        <article class="card soon">
+                            <img src="images/muffins-variety.jpg" alt="Fruit Cups" />
                             <div class="card-content">
-                                <h3>Icecream</h3>
-                                <p>$1.50</p>
+                                <h3>Fruit Cups <span class="pill">Coming Soon</span></h3>
+                                <p class="price">$4.00</p>
                             </div>
-                        </div>
+                        </article>
                     </div>
                 </div>
+            </section>
+
+            <section class="hours">
+                <h2>Summer Hours</h2>
+                <ul class="hours-list" aria-label="Store hours">
+                    <li><span>Monday</span><span>Closed</span></li>
+                    <li><span>Tuesday</span><span>1:00 pm – 8:30 pm</span></li>
+                    <li><span>Wed - Fri</span><span>12:00 pm – 7:00 pm</span></li>
+                    <li><span>Saturday</span><span>10:00 am – 6:00 pm</span></li>
+                    <li><span>Sunday</span><span>3:00 pm – 7:00 pm</span></li>
+                </ul>
+                <p class="hours-note">Hours may shift for events & heat waves — follow
+                    us on Instagram for updates.</p>
             </section>
         </main>
     </div>
 
-    <footer>
-        <p>&copy; 2025 Snacktopia</p>
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p class="footer-name">C & F Snacktopia</p>
+            <p>
+                <a href="https://www.google.com/maps/place/4975+SW+Hall+Blvd,+Beaverton,+OR+97005" target="_blank"
+                    rel="noopener noreferrer">
+                    4975 SW Hall Blvd, Beaverton, OR 97005
+                </a>
+            </p>
+            <p>
+                <a href="tel:+15036401234">(503) 640-1234</a>
+            </p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/YOUR_PAGE" target="_blank" aria-label="Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://www.instagram.com/YOUR_PAGE" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
     </footer>
 
-<script>
-    // Dropdown toggle code (already in place)
-    document.querySelectorAll('.dropdown-toggle').forEach(button => {
-        button.addEventListener('click', () => {
-            const section = button.closest('.dropdown-section');
-            section.classList.toggle('active');
+    <script>
+        // Dropdowns
+        document.querySelectorAll('.dropdown-toggle').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const section = btn.closest('.dropdown-section');
+                const expanded = btn.getAttribute('aria-expanded') === 'true';
+                btn.setAttribute('aria-expanded', String(!expanded));
+                section.classList.toggle('active');
+            });
         });
-    });
-
-    // Open all dropdowns by default
-    document.querySelectorAll('.dropdown-section').forEach(section => {
-        section.classList.add('active');
-    });
-
-    // Scroll & open on category nav
-    document.querySelectorAll('.category-nav a').forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const targetId = link.getAttribute('href').substring(1);
-            const section = document.getElementById(targetId);
-            if (section) {
-                if (!section.classList.contains('active')) {
-                    section.classList.add('active');
+        // Open all dropdowns by default
+        document.querySelectorAll('.dropdown-section').forEach(section =>
+            section.classList.add('active'));
+        // Category scroll
+        document.querySelectorAll('.category-nav a').forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                if (!target) return;
+                const toggle = target.querySelector('.dropdown-toggle');
+                if (toggle && toggle.getAttribute('aria-expanded') === 'false') {
+                    toggle.click();
                 }
-                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
         });
-    });
+        // Hamburger
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mainNav = document.querySelector('.main-nav');
+        menuToggle.addEventListener('click', () => {
+            const open = mainNav.classList.toggle('open');
+            menuToggle.setAttribute('aria-expanded', String(open));
+        });
 
-    // Hamburger menu toggle
-    const menuToggle = document.querySelector('.menu-toggle');
-    const mainNav = document.querySelector('.main-nav');
-    menuToggle.addEventListener('click', () => {
-        mainNav.classList.toggle('open');
-    });
-</script>
+        // --- Snacktopia Summer Hours (America/Los_Angeles) ---
+        const HOURS = {
+            0: [{ start: "15:00", end: "19:00" }], // Sunday 3:00–7:00 pm
+            1: [],                                  // Monday closed
+            2: [{ start: "13:00", end: "20:30" }],  // Tuesday 1:00–8:30 pm
+            3: [{ start: "12:00", end: "19:00" }],  // Wednesday 12:00–7:00 pm
+            4: [{ start: "12:00", end: "19:00" }],  // Thursday
+            5: [{ start: "12:00", end: "19:00" }],  // Friday
+            6: [{ start: "10:00", end: "18:00" }],  // Saturday 10:00–6:00 pm
+        };
 
+        const DAY_NAMES = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        function toTodayDate(timeStr, base) {
+            const [h, m] = timeStr.split(":").map(Number);
+            const d = new Date(base);
+            d.setHours(h, m, 0, 0);
+            return d;
+        }
+        function fmtTime(d) {
+            return d.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
+        }
 
+        function getStatus(now = new Date()) {
+            const today = now.getDay();
+            const todaysWindows = HOURS[today] || [];
+            for (const w of todaysWindows) {
+                const start = toTodayDate(w.start, now);
+                const end = toTodayDate(w.end, now);
+                if (now >= start && now <= end) {
+                    return { open: true, detail: `Open now — closes at ${fmtTime(end)}` };
+                }
+            }
+            for (const w of todaysWindows) {
+                const start = toTodayDate(w.start, now);
+                if (now < start) {
+                    return { open: false, detail: `Closed — reopens today at ${fmtTime(start)}` };
+                }
+            }
+            for (let i = 1; i <= 7; i++) {
+                const day = (today + i) % 7;
+                const windows = HOURS[day] || [];
+                if (windows.length) {
+                    const next = new Date(now);
+                    next.setDate(now.getDate() + i);
+                    const nextOpen = toTodayDate(windows[0].start, next);
+                    return { open: false, detail: `Closed — reopens ${DAY_NAMES[day]} at ${fmtTime(nextOpen)}` };
+                }
+            }
+            return { open: false, detail: "Closed" };
+        }
+
+        function renderOpenStatus() {
+            const badge = document.getElementById("openBadge");
+            const note = document.getElementById("openNote");
+            if (!badge || !note) return;
+            const now = new Date();
+            const status = getStatus(now);
+            badge.textContent = status.open ? "Open" : "Closed";
+            badge.classList.remove("badge-open", "badge-closed");
+            badge.classList.add(status.open ? "badge-open" : "badge-closed");
+            note.textContent = status.detail;
+        }
+
+        renderOpenStatus();
+        setInterval(renderOpenStatus, 60000);
+    </script>
 </body>
 
 </html>

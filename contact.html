@@ -4,30 +4,109 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Contact Snack Shack</title>
+    <title>Contact – C&F Snacktopia</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?
+family=Fredoka:wght@500;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 
 <body>
-    <header>
-        <h1>Snack Shack</h1>
-        <nav>
-            <a href="index.html">Menu</a>
-            <a href="about.html">About Us</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+    <header class="site-header">
+        <div class="header-content">
+            <div class="logo-title">
+                <img src="images/logo.png" alt="C&F Snacktopia logo" class="logo" />
+                <div>
+                    <h1 class="brand">C&amp;F Snacktopia</h1>
+                    <p class="tagline">Where Every Bite Takes You Back</p>
+                </div>
+            </div>
+            <nav class="main-nav" aria-label="Primary">
+                <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+                <div class="nav-links">
+                    <a href="index.html">Menu</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html" aria-current="page">Contact</a>
+                    <a href="https://www.google.com/maps/place/4975+SW+Hall+Blvd,+Beaverton,+OR+97005" target="_blank"
+                        rel="noopener noreferrer">Directions</a>
+                </div>
+            </nav>
+        </div>
     </header>
-
-    <main>
-        <h2>Contact Us</h2>
-        <p>Email: hello@snackshack.com</p>
-        <p>Phone: (123) 456-7890</p>
-        <p>Instagram: <a href="#">@snackshack</a></p>
+    <main id="main" class="page">
+        <div class="contact-grid">
+            <div class="contact-card">
+                <h3>Visit Us</h3>
+                <p><a href="https://maps.google.com/?q=4975+SW+Hall+Blvd,+Beaverton,
++OR+97005" target="_blank" rel="noopener noreferrer">4975 SW Hall Blvd<br>Beaverton, OR 97005</a></p>
+            </div>
+            <div class="contact-card">
+                <h3>Phone</h3>
+                <p><a href="tel:+11234567890">(123) 456‑7890</a></p>
+            </div>
+            <div class="contact-card">
+                <h3>Social Media</h3>
+                <p>@snacktopia</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/YOUR_PAGE" target="_blank" aria-label="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/YOUR_PAGE" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <section class="hours">
+            <h2>Summer Hours</h2>
+            <ul class="hours-list" aria-label="Store hours">
+                <li><span>Monday</span><span>Closed</span></li>
+                <li><span>Tuesday</span><span>1:00 pm – 8:30 pm</span></li>
+                <li><span>Wed - Fri</span><span>12:00 pm – 7:00 pm</span></li>
+                <li><span>Saturday</span><span>10:00 am – 6:00 pm</span></li>
+                <li><span>Sunday</span><span>3:00 pm – 7:00 pm</span></li>
+            </ul>
+            <p class="hours-note">Hours may vary for events</p>
+        </section>
+        <div class="map-cta">
+            <a class="button" href="https://maps.google.com/?q=C%26F+Snacktopia" target="_blank"
+                rel="noopener noreferrer">Email us</a>
+        </div>
     </main>
-
-    <footer>
-        <p>&copy; 2025 Snack Shack</p>
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p class="footer-name">C & F Snacktopia</p>
+            <p>
+                <a href="https://www.google.com/maps/place/4975+SW+Hall+Blvd,+Beaverton,+OR+97005" target="_blank"
+                    rel="noopener noreferrer">
+                    4975 SW Hall Blvd, Beaverton, OR 97005
+                </a>
+            </p>
+            <p>
+                <a href="tel:+15036401234">(503) 640-1234</a>
+            </p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/YOUR_PAGE" target="_blank" aria-label="Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://www.instagram.com/YOUR_PAGE" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
     </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mainNav = document.querySelector('.main-nav');
+        menuToggle.addEventListener('click', () => {
+            const open = mainNav.classList.toggle('open');
+            menuToggle.setAttribute('aria-expanded', String(open));
+        });
+    </script>
 </body>
 
 </html>
