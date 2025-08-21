@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Snacktopia - Menu</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-title">
+                <img src="images/logo.png" alt="Snack Shack Logo" class="logo" />
+                <h1>C&F</h1>
+                <h1>SNACKTOPIA</h1>
+            </div>
+            <nav class="main-nav">
+                <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+                <div class="nav-links">
+                    <a href="index.html">Menu</a>
+                    <a href="about.html">About Us</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="https://maps.google.com/?q=Snack+Shack+Portland" target="_blank"
+                        rel="noopener noreferrer">Directions</a>
+                </div>
+            </nav>
+    </header>
+
+    <div class="container">
+        <div class="category-nav">
+            <a href="#drinks">Drinks</a>
+            <a href="#snacks">Snacks</a>
+            <a href="#sweets">Sweets</a>
+        </div>
+
+        <main>
+            <!-- Drinks Section -->
+            <section id="drinks" class="dropdown-section active">
+                <button class="dropdown-toggle">
+                    Drinks <span class="dropdown-icon">▼</span>
+                </button>
+                <div class="dropdown-content">
+                    <div class="menu-grid">
+                        <div class="card">
+                            <img src="images/water.jpg" alt="Water Bottle" />
+                            <div class="card-content">
+                                <h3>Water Bottle</h3>
+                                <p>$1.00</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/gatorade.jpg" alt="Gatorade" />
+                            <div class="card-content">
+                                <h3>Gatorade</h3>
+                                <p>$2.00</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/soda.jpg" alt="Soda Can" />
+                            <div class="card-content">
+                                <h3>Soda (Various)</h3>
+                                <p>$2.00</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/icedtea.jpg" alt="Iced Tea" />
+                            <div class="card-content">
+                                <h3>Iced Tea</h3>
+                                <p>$2.00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Snacks Section -->
+            <section id="snacks" class="dropdown-section active">
+                <button class="dropdown-toggle">
+                    Snacks <span class="dropdown-icon">▼</span>
+                </button>
+                <div class="dropdown-content">
+                    <div class="menu-grid">
+                        <div class="card">
+                            <img src="images/chips.jpg" alt="Chips" />
+                            <div class="card-content">
+                                <h3>Chips (Various Flavors)</h3>
+                                <p>$1.50</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/pretzel.jpg" alt="Pretzel" />
+                            <div class="card-content">
+                                <h3>Soft Pretzel</h3>
+                                <p>$3.00</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/noodles.jpg" alt="Cup Noodles" />
+                            <div class="card-content">
+                                <h3>Cup Noodles</h3>
+                                <p>$2.50</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/hotdog.jpg" alt="Hot Dog" />
+                            <div class="card-content">
+                                <h3>Hot Dog</h3>
+                                <p>$3.50</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/chili.jpg" alt="Chili" />
+                            <div class="card-content">
+                                <h3>Chili</h3>
+                                <p>$4.50</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sweets Section -->
+            <section id="sweets" class="dropdown-section active">
+                <button class="dropdown-toggle">
+                    Sweets <span class="dropdown-icon">▼</span>
+                </button>
+                <div class="dropdown-content">
+                    <div class="menu-grid">
+                        <div class="card">
+                            <img src="images/candy.jpg" alt="Candy" />
+                            <div class="card-content">
+                                <h3>Candy (Assorted)</h3>
+                                <p>$1.00</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/snowcone.jpg" alt="Snow Cone" />
+                            <div class="card-content">
+                                <h3>Snow Cone</h3>
+                                <p>$2.50</p>
+                            </div>
+                            
+                        </div>
+                        <div class="card">
+                            <img src="images/cookies.jpg" alt="Cookies" />
+                            <div class="card-content">
+                                <h3>Fresh Baked Cookies</h3>
+                                <p>$1.50</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/icecream.jpg" alt="Icecream" />
+                            <div class="card-content">
+                                <h3>Icecream</h3>
+                                <p>$1.50</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Snacktopia</p>
+    </footer>
+
+<script>
+    // Dropdown toggle code (already in place)
+    document.querySelectorAll('.dropdown-toggle').forEach(button => {
+        button.addEventListener('click', () => {
+            const section = button.closest('.dropdown-section');
+            section.classList.toggle('active');
+        });
+    });
+
+    // Open all dropdowns by default
+    document.querySelectorAll('.dropdown-section').forEach(section => {
+        section.classList.add('active');
+    });
+
+    // Scroll & open on category nav
+    document.querySelectorAll('.category-nav a').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href').substring(1);
+            const section = document.getElementById(targetId);
+            if (section) {
+                if (!section.classList.contains('active')) {
+                    section.classList.add('active');
+                }
+                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+
+    // Hamburger menu toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mainNav = document.querySelector('.main-nav');
+    menuToggle.addEventListener('click', () => {
+        mainNav.classList.toggle('open');
+    });
+</script>
+
+
+</body>
+
+</html>
