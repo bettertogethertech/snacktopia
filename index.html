@@ -21,7 +21,7 @@ more." />
     <header class="site-header">
         <div class="header-content">
             <div class="logo-title">
-                <img src="images/logo.png" alt="C&F Snacktopia logo" class="logo" />
+                <!-- <img src="images/logo.png" alt="C&F Snacktopia logo" class="logo" /> -->
                 <div>
                     <h1 class="brand">C&amp;F Snacktopia</h1>
                     <p class="tagline">Where Every Bite Takes You Back</p>
@@ -92,14 +92,16 @@ more." />
                         <article class="card">
                             <img src="images/frito-chili-image-2.jpg" alt="Chili Dog" />
                             <div class="card-content">
-                                <h3>Chili Dog</h3>
+                                <h3>Chili Dog
+                                    <br>   
+                                    <span class="pill">Coming Soon</span> </h3>
                                 <p class="price">$6.00</p>
                             </div>
                         </article>
                         <article class="card">
                             <img src="images/hotdog.jpg" alt="Bacon-wrapped Dog" />
                             <div class="card-content">
-                                <h3>Bacon-wrapped Dog</h3>
+                                <h3>Bacon-wrapped Dog <span class="pill">Coming Soon</span> </h3>
                                 <p class="price">$6.00</p>
                             </div>
                         </article>
@@ -143,18 +145,18 @@ more." />
                             </div>
                         </article>
                         <article class="card">
-                            <img src="images/coffee-drip.jpg" alt="Hot Chocolate" />
+                            <img src="images/hot_chocolate.jpg" alt="Hot Chocolate" />
                             <div class="card-content">
                                 <h3>Hot Chocolate</h3>
                                 <p class="price">$4.00</p>
                             </div>
                         </article>
                         <article class="card">
-                            <img src="images/soda.jpg" alt="Sodas (Pepsi, Sprite)" />
+                            <img src="images/varitey-of-soda.jpeg" alt="Sodas (Pepsi, Sprite)" />
                             <div class="card-content">
                                 <h3>Sodas</h3>
                                 <p class="price">$1.00</p>
-                                <p class="note">Pepsi, Sprite</p>
+                                <p class="note">Coke, Pepsi, Sprite, and Diet Coke</p>
                             </div>
                         </article>
                         <article class="card">
@@ -172,9 +174,9 @@ more." />
                             </div>
                         </article>
                         <article class="card soon">
-                            <img src="images/icecream.jpg" alt="Ice Cream Cups" />
+                            <img src="images/ice_cream.jpg" alt="Ice Cream Cups" />
                             <div class="card-content">
-                                <h3>Ice Cream Cups <span class="pill">Coming Soon</span></h3>
+                                <h3>Ice Cream Cups </h3>
                                 <p class="price">$4.00 / $5.00</p>
                             </div>
                         </article>
@@ -194,12 +196,19 @@ more." />
                             <div class="card-content">
                                 <h3>Chips (Assorted)</h3>
                                 <p class="price">$1.00</p>
-                                <p class="note">Cheetos, Fritos, Takis, Doritos, Flamin' Hot,
-                                    Lays, BBQ Lays, Popcorn</p>
+                                <p class="note">Cheetos, Fritos, Doritos, Lays, BBQ Lays, Popcorn</p>
                             </div>
                         </article>
                         <article class="card">
-                            <img src="images/chips.jpg" alt="Chips with Chamoy" />
+                            <img src="images/hot_chips.jpg" alt="Assorted Chips" />
+                            <div class="card-content">
+                                <h3>Hot Chips (Assorted)</h3>
+                                <p class="price">$1.00</p>
+                                <p class="note"> Takis, Flamin' Hot</p>
+                            </div>
+                        </article>
+                        <article class="card">
+                            <img src="images/dorito.jpeg" alt="Chips with Chamoy" />
                             <div class="card-content">
                                 <h3>Chips w/ Chamoy</h3>
                                 <p class="price">$1.50</p>
@@ -208,7 +217,7 @@ more." />
                         <article class="card">
                             <img src="images/chilli-cheese-fritos-with-jalapenos.png" alt="Chili Cheese Fritos" />
                             <div class="card-content">
-                                <h3>Chili Cheese Fritos</h3>
+                                <h3>Chili Cheese Fritos <span class="pill">Coming Soon</span> </h3>
                                 <p class="price">$4.00 / $5.00</p>
                             </div>
                         </article>
@@ -232,7 +241,7 @@ more." />
                 <div class="dropdown-content">
                     <div class="menu-grid">
                         <article class="card">
-                            <img src="images/ice-cream-image.jpg" alt="ICEE Pops" />
+                            <img src="images/otter_pop.jpg" alt="ICEE Pops" />
                             <div class="card-content">
                                 <h3>ICEE Pops</h3>
                                 <p class="price">$1.00</p>
@@ -253,9 +262,9 @@ more." />
                             </div>
                         </article>
                         <article class="card soon">
-                            <img src="images/muffins-variety.jpg" alt="Fruit Cups" />
+                            <img src="images/fruit_cup.jpg" alt="Fruit Cups" />
                             <div class="card-content">
-                                <h3>Fruit Cups <span class="pill">Coming Soon</span></h3>
+                                <h3>Fruit Cups </h3>
                                 <p class="price">$4.00</p>
                             </div>
                         </article>
@@ -290,7 +299,8 @@ more." />
             <p>
                 <a href="tel:+15036401234">(503) 640-1234</a>
             </p>
-            <div class="social-links">
+                <!--
+                <div class="social-links">
                 <a href="https://www.facebook.com/YOUR_PAGE" target="_blank" aria-label="Facebook">
                     <i class="fab fa-facebook"></i>
                 </a>
@@ -298,6 +308,7 @@ more." />
                     <i class="fab fa-instagram"></i>
                 </a>
             </div>
+                -->
         </div>
     </footer>
 
@@ -324,7 +335,21 @@ more." />
                 if (toggle && toggle.getAttribute('aria-expanded') === 'false') {
                     toggle.click();
                 }
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                // Slow down smooth scroll
+                const y = target.getBoundingClientRect().top + window.pageYOffset;
+                const startY = window.pageYOffset;
+                const duration = 1100; // ms, increase for slower scroll
+                let startTime = null;
+                function animateScroll(currentTime) {
+                    if (!startTime) startTime = currentTime;
+                    const timeElapsed = currentTime - startTime;
+                    const progress = Math.min(timeElapsed / duration, 1);
+                    window.scrollTo(0, startY + (y - startY) * progress);
+                    if (progress < 1) {
+                        requestAnimationFrame(animateScroll);
+                    }
+                }
+                requestAnimationFrame(animateScroll);
             });
         });
         // Hamburger
