@@ -16,6 +16,7 @@ more." />
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Inter:wght@400;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
 </head>
 
 <body>
@@ -41,6 +42,28 @@ more." />
             </nav>
         </div>
     </header>
+    
+    <!-- Event Banner (remove or comment out when not needed) -->
+    <section class="event-banner" id="eventBanner" role="status" aria-label="Event announcement">
+        <div class="event-banner-inner">
+            <span class="event-pill">Hot Drinks Available</span>
+
+            <div class="event-banner-text">
+                <p class="event-main">
+                    Join us <strong>TONIGHT(12/5) </strong> for the
+                    <strong>Beaverton Tree Lighting Ceremony</strong>
+                    across from Beaverton 5th &amp; Hall at <strong>4:00 pm</strong>.
+                </p>
+
+                <p class="event-sub">
+                    Warm up with Hot Cocoa • Hot Cider • Hot Tea • Hot Coffee ☕
+                </p>
+            </div>
+
+            <button class="event-banner-close" aria-label="Dismiss announcement">&times;</button>
+        </div>
+    </section>
+
 
     <!-- Compact hero with ticker + live open/closed -->
     <section class="hero-mini">
@@ -428,6 +451,34 @@ more." />
 
         renderOpenStatus();
         setInterval(renderOpenStatus, 60000);
+                    // --- Event banner behavior (close + auto-hide after event) ---
+        (function handleEventBanner() {
+            const eventBanner = document.getElementById('eventBanner');
+            if (!eventBanner) return;
+
+            const closeBtn = eventBanner.querySelector('.event-banner-close');
+
+            // 1) Set your event end date/time here (local time, Beaverton)
+            // Example: Dec 6, 2025 at 7:00 pm PT (after the 4pm ceremony + buffer)
+            const EVENT_END = new Date('2025-12-06T19:00:00-08:00');
+
+            const now = new Date();
+
+            // If event is over, remove the banner
+            if (now > EVENT_END) {
+                eventBanner.remove();
+                return;
+            }
+
+            // Close button hides banner for this visit
+            if (closeBtn) {
+                closeBtn.addEventListener('click', () => {
+                    eventBanner.style.display = 'none';
+                });
+            }
+        })();
+
+
     </script>
 </body>
 

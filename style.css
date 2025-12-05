@@ -778,3 +778,196 @@ footer {
 .social-links a:hover {
     color: var(--primary);
 }
+/* --- Event Banner - solid background + dot snow --- */
+.event-banner {
+    position: relative;
+    max-width: 1000px;
+    margin: 0.5rem auto 1rem;
+    padding: 0.9rem 1rem;
+    border-radius: 18px;
+
+    /* Solid Christmas background (deep green) */
+    background: #14532d;
+
+    color: #ffffff;
+    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    animation: fadeInBanner 0.5s ease-out;
+}
+
+/* Simple solid circles as snowflakes, falling only inside banner */
+.event-banner::before,
+.event-banner::after {
+    content: "";
+    position: absolute;
+    inset: -40px 0 0 0;
+    pointer-events: none;
+    background-repeat: repeat;
+    opacity: 0.8;
+}
+
+/* bigger, slower dots */
+.event-banner::before {
+    background-image:
+        radial-gradient(circle, #ffffff 0 2px, transparent 2px),
+        radial-gradient(circle, #ffffff 0 2px, transparent 2px);
+    background-size: 40px 40px, 60px 60px;
+    animation: snowDotsSlow 10s linear infinite;
+}
+
+/* smaller, faster dots */
+.event-banner::after {
+    background-image:
+        radial-gradient(circle, #ffffff 0 1.5px, transparent 1.5px),
+        radial-gradient(circle, #ffffff 0 1.5px, transparent 1.5px);
+    background-size: 20px 20px, 30px 30px;
+    animation: snowDotsFast 6s linear infinite;
+}
+
+/* inner layout */
+.event-banner-inner {
+    position: relative;  /* above snow layers */
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    z-index: 1;
+}
+
+.event-icon {
+    font-size: 1.6rem;
+}
+
+/* keep text super readable on solid green */
+.event-banner-text {
+    max-width: 640px;
+    text-align: left;
+
+    /* NEW: soft translucent box */
+    background: rgba(34, 197, 94, 0.30); /* light green with transparency */
+    padding: 0.65rem 0.9rem;
+    border-radius: 14px;
+
+    /* subtle border to help separate text */
+    border: 1px solid rgba(255, 255, 255, 0.35);
+
+    /* soft backdrop blur for premium feel */
+    backdrop-filter: blur(4px);
+
+    /* light shadow so it sits above the snow but not too strong */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+.event-main {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.4;
+    font-weight: 700;
+    color: #f9fafb; /* very light */
+}
+
+.event-sub {
+    margin: 0.25rem 0 0;
+    font-size: 0.9rem;
+    color: #e5e7eb; /* slightly softer white */
+}
+
+/* Hot Drinks pill – pops, still Christmasy */
+.event-pill {
+    background: #b91c1c; /* red */
+    color: #ffffff;
+    border-radius: 999px;
+    padding: 0.3rem 0.9rem;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    font-family: "Fredoka", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+    white-space: nowrap;
+    animation: pillPulse 1.9s ease-in-out infinite;
+}
+
+/* close button: simple and visible */
+.event-banner-close {
+    border: none;
+    background: rgba(34, 197, 94, 0.50); 
+    color: #ffffff;
+    font-size: 1.2rem;
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    cursor: pointer;
+    line-height: 1;
+    transition: background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.event-banner-close:hover,
+.event-banner-close:focus-visible {
+    outline: none;
+    background: rgba(0, 0, 0, 0.4);
+    transform: scale(1.06);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.8);
+}
+
+/* animations */
+@keyframes fadeInBanner {
+    from { opacity: 0; transform: translateY(-10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* move the dot patterns down to look like falling snow */
+@keyframes snowDotsSlow {
+    0%   { background-position: 0 -40px, 40px -60px; }
+    100% { background-position: 0 40px, 40px 60px; }
+}
+
+@keyframes snowDotsFast {
+    0%   { background-position: 0 -20px, 20px -30px; }
+    100% { background-position: 0 40px, 20px 50px; }
+}
+
+/* pulse highlight on pill */
+@keyframes pillPulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+    50% {
+        transform: scale(1.06);
+        box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.35);
+    }
+}
+
+/* mobile tweaks */
+@media (max-width: 600px) {
+    .event-banner {
+        margin: 0.4rem auto 0.9rem;
+        padding: 1rem 0.85rem;
+    }
+
+    .event-banner-inner {
+        align-items: flex-start;
+    }
+
+    .event-banner-text {
+        max-width: 100%;
+        text-align: left;
+    }
+
+    .event-main {
+        font-size: 0.96rem;
+    }
+
+    .event-sub {
+        font-size: 0.86rem;
+    }
+
+    .event-pill {
+        margin-top: 0.25rem;
+    }
+}
