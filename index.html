@@ -301,10 +301,9 @@ more." />
                 <h2>Summer Hours</h2>
                 <ul class="hours-list" aria-label="Store hours">
                     <li><span>Monday</span><span>Closed</span></li>
-                    <li><span>Tuesday</span><span>1:00 pm – 8:30 pm</span></li>
-                    <li><span>Wed - Fri</span><span>12:00 pm – 7:00 pm</span></li>
-                    <li><span>Saturday</span><span>10:00 am – 6:00 pm</span></li>
-                    <li><span>Sunday</span><span>3:00 pm – 7:00 pm</span></li>
+                    <li><span>Tue - Fri</span><span>1:00 pm – 4:00 pm</span></li>
+                    <li><span>Saturday</span><span>10:00 am – 4:00 pm</span></li>
+                    <li><span>Sunday</span><span>Closed</span></li>
                 </ul>
                 <p class="hours-note">Hours may shift for events & heat waves — follow
                     us on Instagram for updates.</p>
@@ -388,13 +387,13 @@ more." />
 
         // --- Snacktopia Summer Hours (America/Los_Angeles) ---
         const HOURS = {
-            0: [{ start: "15:00", end: "19:00" }], // Sunday 3:00–7:00 pm
+            0: [], // Sunday 3:00–7:00 pm
             1: [],                                  // Monday closed
-            2: [{ start: "13:00", end: "20:30" }],  // Tuesday 1:00–8:30 pm
-            3: [{ start: "12:00", end: "19:00" }],  // Wednesday 12:00–7:00 pm
-            4: [{ start: "12:00", end: "19:00" }],  // Thursday
-            5: [{ start: "12:00", end: "19:00" }],  // Friday
-            6: [{ start: "10:00", end: "18:00" }],  // Saturday 10:00–6:00 pm
+            2: [{ start: "13:00", end: "16:00" }],  // Tuesday 1:00–8:30 pm
+            3: [{ start: "13:00", end: "16:00" }],  // Wednesday 12:00–7:00 pm
+            4: [{ start: "13:00", end: "16:00" }],  // Thursday
+            5: [{ start: "13:00", end: "16:00" }],  // Friday
+            6: [{ start: "10:00", end: "16:00" }],  // Saturday 10:00–6:00 pm
         };
 
         const DAY_NAMES = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
